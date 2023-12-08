@@ -1,1 +1,10 @@
-/* You can add global styles to this file, and also import other style files */
+// -------------------------------- ABSTRACT ----------------------------------------------------
+@import "./scss/abstracts/variable";
+
+// -------------------------------- BASE ----------------------------------------------------
+@import './scss/base/reset';
+@import './scss/base/typography';
+
+// -------------------------------- SHARED ----------------------------------------------------
+@import './scss/shared/utils';
+@import './scss/shared/links';
