@@ -1,6 +1,11 @@
 <div class="album-banner--container">
     <!--Add params-->
-    <app-album-image></app-album-image>
+    <app-album-image
+        [albumImgUrl]="albumImgUrl"
+        [albumImgAlt]="albumImgAlt"
+        [title]="title"
+        [releaseDate]="releaseDate"
+    ></app-album-image>
     <div class="album-banner--details">
         <h1 class="album-banner--title">
             {{albumTitle}}

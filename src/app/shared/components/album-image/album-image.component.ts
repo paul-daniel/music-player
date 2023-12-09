@@ -7,8 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AlbumImageComponent {
 
-  @Input() albumImgUrl : string = "assets/images/banner-image.jpeg";
-  @Input() albumImgAlt : string = "Album Image";
-  @Input() title : string = "Instinct";
-  @Input() releaseDate : string =  "Released May, 2022";
+  @Input() albumImgUrl : string = "";
+  @Input() albumImgAlt : string = "";
+  @Input() title : string = "";
+  @Input() releaseDate : string =  "";
 }

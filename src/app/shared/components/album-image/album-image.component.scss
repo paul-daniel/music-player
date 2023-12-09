@@ -8,10 +8,17 @@
         font-weight: 600;
         font-style: italic;
         color: $color-white;
+
+        @media screen and (max-width: 303px) {
+            font-size: 1.2rem;
+        }
     }
 
     &--subtitle{
         color: $color-green;
+        @media screen and (max-width: 303px) {
+            font-size: 1.2rem;
+        }
     }
 
     &--release-date{
@@ -22,5 +29,15 @@
         width: 600px;
         height: 600px;
         object-fit: cover;
+
+        @media screen and (max-width: 1439px) {
+            width: 400px;
+            height: 400px;
+        }
+
+        @media screen and (max-width: 796px) {
+            width: 95%;
+            height: 95%;
+        }
     }
 }
