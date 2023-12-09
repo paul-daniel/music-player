@@ -1,4 +1,17 @@
 //TODO: Remove
 .home-container{
     background-color: black;
+    padding: 10rem 15rem;
+
+    @media screen and (max-width: 1439px) {
+        padding : 8rem;
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding : 4rem;
+    }
+
+    @media screen and (max-width: 796px) {
+        padding: 2rem;
+    }
 }
