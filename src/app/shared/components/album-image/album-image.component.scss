@@ -1,0 +1,26 @@
+@import "src/scss/abstracts/variable";
+
+.album-image{
+    display: flex;
+    &--title{
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        font-weight: 600;
+        font-style: italic;
+        color: $color-white;
+    }
+
+    &--subtitle{
+        color: $color-green;
+    }
+
+    &--release-date{
+
+    }
+
+    &--img{
+        width: 600px;
+        height: 600px;
+        object-fit: cover;
+    }
+}

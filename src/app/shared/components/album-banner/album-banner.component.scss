@@ -1,0 +1,69 @@
+@import "src/scss/abstracts/variable";
+
+.album-banner{
+    &--container{
+        margin: 0 15rem;
+        display: flex;
+        align-items: center;
+        color : $color-white;
+    }
+
+    &--details{
+        margin-left: 10rem;
+        flex: 1;
+    }
+
+    &--title{
+        font-size: 6rem;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: #F1F1F1;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &--artist-name{
+        font-size: 5rem;
+        font-weight: 800;
+    }
+
+    &--cta{
+        margin-top: 5rem;
+        display: flex;
+        button{
+            display: flex;
+            align-items: center;
+            font-family: "Monument Extended", "Helvetica", Arial, sans-serif;;
+            outline: none;
+            color : $color-white;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: all .3s $ease-in-out;
+
+            &:hover{
+                background-color: $color-white;
+                border: 2px solid $color-white;
+                color : $color-black;
+            }
+
+            &>*{
+                &:first-child{
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+
+    &--listen{
+        border: 2px solid $color-green;
+        background-color: $color-green;
+        margin-right: 1rem;
+        padding: 2rem;
+    }
+
+    &--share{
+        background-color: transparent;
+        border: 2px solid $color-white;
+        padding : 2rem;
+    }
+}
