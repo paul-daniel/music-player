@@ -1,0 +1,32 @@
+@import "src/scss/abstracts/variable";
+
+.platform-tray{
+    &--container{
+        color : #fff;
+    }
+
+    &--platforms{
+        display: flex;
+        margin-top: 7rem;
+    }
+
+    &--platform{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        border: 1px solid $color-white;
+        padding: 2rem;
+        cursor: pointer;
+    }
+
+    &--icon{
+        width: 4rem;
+    }
+
+    &--label{
+        margin-top: 2px;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+}
