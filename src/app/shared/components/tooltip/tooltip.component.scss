@@ -1,0 +1,31 @@
+@import "src/scss/abstracts/variable";
+
+.tooltip-content {
+    /* Your styling here */
+    font-size: 1.3rem;
+    position: absolute;
+    display: inline-block;
+    background-color: $color-white;
+    text-transform: capitalize;
+    color: $color-black;
+    text-align: center;
+    width : block;
+    white-space: nowrap;
+    font-weight: 500;
+    padding: 1rem;
+    top: -100%;
+    right: 50%;
+    transform: translate(50%, -175%);
+    /* Additional styling */
+}
+
+.tooltip-content::after {
+    content: '';
+    position: absolute;
+    bottom: -9px; /* Adjust this value as needed */
+    left: 50%;
+    margin-left: -5px; /* This should be half the width of your arrow */
+    border-width: 5px; /* Adjust size of the arrow */
+    border-style: solid;
+    border-color: $color-white transparent transparent transparent; /* Arrow color */
+}

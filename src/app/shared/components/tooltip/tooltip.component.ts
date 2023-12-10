@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tooltip',
@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./tooltip.component.scss']
 })
 export class TooltipComponent {
+  @Input() text = '';
+  visible = false;
 
+  show() {
+    this.visible = true;
+  }
+
+  hide() {
+    this.visible = false;
+  }
 }

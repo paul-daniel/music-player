@@ -2,8 +2,11 @@
     <div class="u-title">{{"stream it your way" | uppercase}}</div>
     <div class="platform-tray--platforms">
         <a *ngFor="let platform of platforms; let i = index" class="platform-tray--platform">
-            <img class="platform-tray--icon" [src]="platform.url" [alt]="platform.alt" [title]="platform.title">
-            <span class="platform-tray--label" *ngIf="i === 0">Player</span>
+            <div class="platform-tray--platform--container" (mouseover)="tooltip.show()" (mouseout)="tooltip.hide()" >
+                <img class="platform-tray--icon" [src]="platform.url" [alt]="platform.alt" [title]="platform.title" [ngClass]="{'u-margin-right-sm' : i === 0}">
+                <span class="platform-tray--label" *ngIf="i === 0">Player</span>
+                <app-tooltip #tooltip [text]="platform.title"></app-tooltip>
+            </div> 
         </a>
     </div>
 </div>
