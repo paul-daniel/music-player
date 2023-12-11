@@ -7,6 +7,7 @@ import { SpacerComponent } from './components/spacer/spacer.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { TrackListComponent } from './components/track-list/track-list.component';
 import { TrackComponent } from './components/track/track.component';
+import { MusicVideoComponent } from './components/music-video/music-video.component';
 
 const components = [
   AlbumBannerComponent,
@@ -15,7 +16,8 @@ const components = [
   SpacerComponent,
   TooltipComponent,
   TrackListComponent,
-  TrackComponent
+  TrackComponent,
+  MusicVideoComponent,
 ]
 
 @NgModule({
