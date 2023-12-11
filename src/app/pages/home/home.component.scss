@@ -1,7 +1,23 @@
 //TODO: Remove
 .home-container{
-    background-color: black;
+    position: relative;
+    background-image: url('../../../assets/images/banner-image.jpeg'); /* Set your image here */
+    backdrop-filter: blur(1px);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
     padding: 10rem 15rem;
+
+    &::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 25%, rgba(0, 0, 0, 1));
+    }
 
     @media screen and (max-width: 1439px) {
         padding : 8rem;
