@@ -8,6 +8,8 @@ import { TooltipComponent } from './components/tooltip/tooltip.component';
 import { TrackListComponent } from './components/track-list/track-list.component';
 import { TrackComponent } from './components/track/track.component';
 import { MusicVideoComponent } from './components/music-video/music-video.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 const components = [
   AlbumBannerComponent,
@@ -18,6 +20,8 @@ const components = [
   TrackListComponent,
   TrackComponent,
   MusicVideoComponent,
+  FooterComponent,
+  HeaderComponent,
 ]
 
 @NgModule({
