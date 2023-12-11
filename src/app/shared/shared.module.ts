@@ -5,13 +5,17 @@ import { AlbumImageComponent } from './components/album-image/album-image.compon
 import { PlatformsTrayComponent } from './components/platforms-tray/platforms-tray.component';
 import { SpacerComponent } from './components/spacer/spacer.component';
 import { TooltipComponent } from './components/tooltip/tooltip.component';
+import { TrackListComponent } from './components/track-list/track-list.component';
+import { TrackComponent } from './components/track/track.component';
 
 const components = [
   AlbumBannerComponent,
   AlbumImageComponent,
   PlatformsTrayComponent,
   SpacerComponent,
-  TooltipComponent
+  TooltipComponent,
+  TrackListComponent,
+  TrackComponent
 ]
 
 @NgModule({

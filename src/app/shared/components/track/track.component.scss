@@ -1,0 +1,51 @@
+@import "src/scss/abstracts/variable";
+@import "src/scss/shared/utils";
+
+.track-container{
+    color : $color-white;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    font-size: 2rem;
+
+    @media screen and (max-width: 796px) {
+        font-size: 1.4rem;
+    }
+
+    &>*{
+        &:not(:last-child){
+            margin-right: 3rem;
+        }
+    }
+
+    &--index{
+
+    }
+
+    &--play{
+        font-size: 3.4rem;
+        cursor: pointer;
+
+        @media screen and (max-width: 796px) {
+            font-size: 2.8rem;
+        }
+    }
+
+    &--title{
+        display: flex;
+        flex-direction: column;
+        flex : 1;
+        font-weight: 600;
+    }
+
+    &--time{
+
+    }
+
+    &--share{
+        font-size: 3.4rem;
+        @media screen and (max-width: 796px) {
+            font-size: 2.8rem;
+        }
+    }
+}
