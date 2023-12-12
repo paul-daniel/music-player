@@ -1,9 +1,11 @@
 <div class="header-container">
     <img src="https://storage.googleapis.com/monstercat/monstercat-logo.webp" alt="logo">
     <div class="header-container--search">
-        <span text="" (mouseover)="tooltip.show()" (mouseout)="tooltip.hide()" class="material-symbols-outlined">
-            search
-        </span>
+        <a (click)="navigateToSearch()">
+            <span text="" (mouseover)="tooltip.show()" (mouseout)="tooltip.hide()" class="material-symbols-outlined">
+                search
+            </span>
+        </a>
         <app-tooltip #tooltip text="search for any song by clicking here"></app-tooltip>
     </div>
 </div>

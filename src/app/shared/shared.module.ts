@@ -10,7 +10,6 @@ import { TrackComponent } from './components/track/track.component';
 import { MusicVideoComponent } from './components/music-video/music-video.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SearchPageComponent } from './components/search-page/search-page.component';
 
 const components = [
   AlbumBannerComponent,
@@ -23,7 +22,6 @@ const components = [
   MusicVideoComponent,
   FooterComponent,
   HeaderComponent,
-  SearchPageComponent,
 ]
 
 @NgModule({
