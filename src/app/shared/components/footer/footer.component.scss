@@ -1,0 +1,86 @@
+@import "src/scss/abstracts/variable";
+@import "src/scss/shared/utils";
+
+.footer-container{
+    color : $color-white;
+
+    &--upper-content{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &--nav{
+        flex: 1 1 70%;
+        font-family: $font-secondary;
+        font-size: 2.5rem;
+    }
+
+    &--nav ul{
+        display: flex;
+        flex-wrap: wrap;
+        column-gap: 5rem;
+        row-gap: 2rem;
+
+        li{
+            flex: 1 1 30%; 
+            
+            a{
+                text-decoration: none;
+                color: $color-white;
+
+                &:hover{
+                    filter: brightness(80%);
+                }
+            }
+        }
+    }
+
+    &--newsletter{
+        flex : 0 1 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        p{
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.8rem;
+            line-height: 3rem;
+        }
+
+        form{
+            .form-group{
+                display: flex;
+                border-bottom: 1px solid $color-lightGray;
+                padding : 1rem 5px;
+                justify-content: space-between;
+            }
+
+            input{
+                background-color: transparent;
+                border: none;
+                font-size: 1.8rem;
+                letter-spacing: 4px;
+                outline: none;
+                color: $color-white;
+                flex: 1;
+                margin-right: 5px;
+            }
+
+            button{
+                cursor: pointer;
+                background-color: transparent;
+                border: none;
+                outline: none;
+                color: $color-white;
+            }
+        }
+    }
+
+    &--title{
+        font-family: $font-secondary;
+        color : $color-lightGray;
+        font-size: 2rem;
+        text-transform: uppercase;
+    }
+}
