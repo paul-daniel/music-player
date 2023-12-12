@@ -83,4 +83,19 @@
         font-size: 2rem;
         text-transform: uppercase;
     }
+
+    &--acknowledgment{
+        text-align: center;
+        font-style: italic;
+        font-size: 1.3rem;
+        padding: 0 30rem;
+        color: $color-white;
+    }
+}
+
+.copyright{
+    font-size: 2rem;
+    color: $color-white;
+    font-style: italic;
+    margin-bottom: 6rem;
 }
