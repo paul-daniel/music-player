@@ -1,0 +1,34 @@
+@import "src/scss/abstracts/variable";
+
+.header-container{
+    display: flex;
+    padding-bottom: 10rem;
+    align-items: center;
+    justify-content: space-between;
+    img{
+        width: 60px;
+    }
+
+    &--search{
+        position: relative;
+    }
+
+    span{
+        color: $color-white;
+        font-size: 3rem;
+        border: 2px solid $color-white;
+        padding: 1.3rem;
+        cursor: pointer;
+        transition: all .5s $ease-out-expo;
+
+        &:hover{
+            background-color: $color-black;
+            border-color: $color-black;
+            color: $color-lightGray;
+        }
+    }
+
+    &--search{
+
+    }
+}
