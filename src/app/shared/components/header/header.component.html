@@ -1,7 +1,9 @@
 <div class="header-container">
-    <img src="https://storage.googleapis.com/monstercat/monstercat-logo.webp" alt="logo">
+    <a [routerLink]="['/']">
+      <img src="https://storage.googleapis.com/monstercat/monstercat-logo.webp" alt="logo">  
+    </a>
     <div class="header-container--search">
-        <a (click)="navigateToSearch()">
+        <a [routerLink]="['/search']">
             <span text="" (mouseover)="tooltip.show()" (mouseout)="tooltip.hide()" class="material-symbols-outlined">
                 search
             </span>

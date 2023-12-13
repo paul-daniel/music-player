@@ -10,6 +10,8 @@ import { TrackComponent } from './components/track/track.component';
 import { MusicVideoComponent } from './components/music-video/music-video.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { RouterModule } from '@angular/router';
+import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
 
 const components = [
   AlbumBannerComponent,
@@ -22,17 +24,24 @@ const components = [
   MusicVideoComponent,
   FooterComponent,
   HeaderComponent,
+  LoadingScreenComponent,
+]
+
+const modules = [
+  CommonModule,
+  RouterModule
 ]
 
 @NgModule({
   declarations: [
     ...components,
+    
   ],
   exports : [
     ...components
   ],
   imports: [
-    CommonModule
+    ...modules
   ]
 })
 export class SharedModule { }

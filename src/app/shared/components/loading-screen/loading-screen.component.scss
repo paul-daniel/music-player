@@ -1,0 +1,50 @@
+@import "src/scss/abstracts/variable";
+
+.loading-screen {
+    position: fixed;
+    z-index: 200;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    background-color: rgba($color-black,1); /* Adjust as needed */
+    transition: all 2s 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+  
+.pulsing-image {
+    font-size: 20rem;
+    color: rgba($color-white,1);;
+    animation: pulse $ease-out-expo 1.2s infinite;
+    transition: all 2s 1s ease-out;
+}
+
+.fadeOut{
+    background-color: transparent;
+
+    .pulsing-image{
+        color: transparent;
+    }
+}
+
+.fadeIn{
+    background-color: transparent;
+
+    .pulsing-image{
+        color: transparent;
+    }
+}
+
+.z-index{
+    z-index: -2000;
+    display: none;
+}

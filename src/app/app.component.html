@@ -1,1 +1,4 @@
-<router-outlet></router-outlet>
+<app-loading-screen  *ngIf="showLoadingScreen" (animationDone)="onAnimationDone()"></app-loading-screen>
+<div [@routeAnimations]="prepareRoute(o)">
+    <router-outlet #o="outlet"></router-outlet>
+</div>
