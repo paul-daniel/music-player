@@ -1,4 +1,48 @@
+@import "src/scss/abstracts/variable";
+
 .search-container{
-    background-color: #000;
+    min-height: 100vh;
+    background: linear-gradient(
+                    rgba(0, 0, 0, 0.9), /* Black with 50% opacity */
+                    rgba(0, 0, 0, 0.9)  /* You can adjust the opacity as needed */
+                ),
+                url('../../../assets/images/banner-image.jpeg'); /* Path to your image */
+    background-size: cover;
     color: #fff;
+    position: relative;
+
+    &--search-group{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    &--form-group{
+        display: flex;
+        align-items: center;
+    }
+
+    .search-title{
+        margin-bottom: 5rem;
+        font-size: 4rem;
+        font-family: $font-secondary;
+        text-transform: uppercase;
+    }
+
+    .search-bar{
+        padding : 1.55rem 2rem;
+        width: 50rem;
+        border : none;
+        outline: none;
+        font-size: 1.6rem;
+    }
+
+    .search-icon{
+        display: flex;
+        border: 1px solid $color-white;
+        padding: 1.2rem;
+        cursor: pointer;
+    }
 }
