@@ -1,10 +1,7 @@
 <div class="search-container">
-    <div class="search-container--search-group">
-        <h2 class="search-title">
-            Search...
-        </h2>
+    <div #searchbar class="search-container--search-group">
         <div class="search-container--form-group">
-           <input class="search-bar" type="text" placeholder="search..."/>
+           <input [formControl]="searchInputControl" class="search-bar" type="text" placeholder="search..." (focus)="moveUpEffect()" (blur)="resetEffect()"/>
            <span class="material-symbols-outlined search-icon">
             search
            </span>

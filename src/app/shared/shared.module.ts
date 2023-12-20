@@ -12,6 +12,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { RouterModule } from '@angular/router';
 import { LoadingScreenComponent } from './components/loading-screen/loading-screen.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const components = [
   AlbumBannerComponent,
@@ -29,7 +30,7 @@ const components = [
 
 const modules = [
   CommonModule,
-  RouterModule
+  RouterModule,
 ]
 
 @NgModule({
