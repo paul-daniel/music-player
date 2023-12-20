@@ -2,7 +2,7 @@
     <div #searchbar class="search-container--search-group">
         <div class="search-container--form-group">
            <input [formControl]="searchInputControl" class="search-bar" type="text" placeholder="search..." (focus)="moveUpEffect()" (blur)="resetEffect()"/>
-           <span class="material-symbols-outlined search-icon">
+           <span class="material-symbols-outlined search-icon" (click)="search()">
             search
            </span>
         </div>

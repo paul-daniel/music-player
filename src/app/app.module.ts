@@ -9,6 +9,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from './shared/shared.module';
 import { SearchComponent } from './pages/search/search.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     SharedModule,
   ],
   providers: [],

@@ -45,7 +45,6 @@ export class LoadingScreenComponent implements OnDestroy  {
   }
 
   onAnimationDone(event: any) {
-    console.log("DEBUG ANIM", true)
     if (event.toState === 'void') {
       this.animationDone.emit();
     }

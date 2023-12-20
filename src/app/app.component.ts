@@ -37,7 +37,6 @@ export class AppComponent {
 
   constructor(private router: Router, private loadingService: LoadingService) {
     this.router.events.subscribe(event => {
-      console.log("DEBUG", event instanceof NavigationStart)
       if (event instanceof NavigationStart) {
         this.loadingService.setLoading(true);
         this.showLoadingScreen = true;
