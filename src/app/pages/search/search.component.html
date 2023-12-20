@@ -7,4 +7,15 @@
            </span>
         </div>
     </div>
+    <div class="search-container--search--results">
+        <div *ngFor="let album of albums" class="card">
+            <img [src]="album.coverArt.sources[2].url" alt="{{ album.name }}">
+            <div class="card-body">
+              <h5 class="card-title">{{ album.name }}</h5>
+              <p class="card-text">Artist: {{ album.artists.items[0].profile.name }}</p>
+              <p class="card-text">Year: {{ album.date.year }}</p>
+              <a href="{{ album.uri }}" class="btn btn-primary">Go to Album</a>
+            </div>
+          </div>
+    </div>
 </div>

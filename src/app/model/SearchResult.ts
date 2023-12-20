@@ -235,3 +235,15 @@ export interface Image {
     smallImageUrl: string;
     largeImageUrl: string;
 }
+
+export enum SearchType {
+    Albums = "albums",
+    Artists = "artists",
+    Episodes = "episodes",
+    Genres = "genres",
+    Playlists = "playlists",
+    Podcasts = "podcasts",
+    Tracks = "tracks",
+    Users = "users",
+    Multi = "multi"
+}

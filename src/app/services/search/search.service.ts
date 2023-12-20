@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
-import { SearchResults } from 'src/app/model/SearchResult';
+import { SearchResults, SearchType } from 'src/app/model/SearchResult';
 
 @Injectable({
   providedIn: 'root'
@@ -16,13 +16,13 @@ export class SearchService {
 
   constructor(private http : HttpClient) {}
 
-  search(query : string) : Observable<SearchResults>{
+  search(type: SearchType = SearchType.Multi, query : string) : Observable<SearchResults>{
 
     const params = new HttpParams()
       .set('q', query)
-      .set('type', 'multi')
+      .set('type', type)
       .set('offset', '0')
-      .set('limit', '20')
+      .set('limit', '5')
       .set('numberOfTopResults', '5');
 
     return this.http.get<SearchResults>(this.apiUrl, {headers : this.headers, params : params})
