@@ -1,11 +1,9 @@
 <div class="search-container">
-    <div #searchbar class="search-container--search-group">
-        <div class="search-container--form-group">
+    <!-- <div class="search-container--form-group">
            <input [formControl]="searchInputControl" class="search-bar" type="text" placeholder="search..." (focus)="moveUpEffect()" (blur)="resetEffect()"/>
            <span class="material-symbols-outlined search-icon" (click)="search()">
             search
            </span>
-        </div>
     </div>
     <div class="search-container--search--results">
         <div *ngFor="let album of albums" class="card">
@@ -17,5 +15,25 @@
               <a href="{{ album.uri }}" class="btn btn-primary">Go to Album</a>
             </div>
           </div>
+    </div> -->
+    <form class="search-container--searchbar">
+      <div class="search-container--search-group">
+        <span class="material-symbols-outlined search-container--search-icon">
+          search
+        </span>
+        <input  class="search-container--searchbar-input" type="text" placeholder="What do you want to listen to ?" [formControl]="searchInputControl" />
+      </div>
+    </form>
+
+    <div class="search-container--dummy-container" *ngIf="categories">
+      <h2 class="search-container--title-secondary">
+        Browse All
+      </h2>
+      <div class="search-container--cards">
+        <div class="search-container--card" [ngStyle]="{'background-color': category.backgroundColor.hex}"  *ngFor="let category of categories">
+          <h3 class="title">{{category.title.transformedLabel}}</h3>
+          <img class="thumbnail" [src]="category.artwork.sources[0].url">
+        </div>
+      </div>
     </div>
 </div>

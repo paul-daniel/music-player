@@ -1,55 +1,146 @@
 @import "src/scss/abstracts/variable";
 
+// .search-container{
+//     min-height: 100vh;
+//     background: linear-gradient(
+//                     rgba(0, 0, 0, 0.96), /* Black with 50% opacity */
+//                     rgba(0, 0, 0, 0.96)  /* You can adjust the opacity as needed */
+//                 ),
+//                 url('../../../assets/images/bg-search.jpg'); /* Path to your image */
+//     background-size: cover;
+//     background-position: 100% 30%;
+//     color: #fff;
+//     position: relative;
+
+//     &--search-group{
+//         display: flex;
+//         flex-direction: column;
+//         position: absolute;
+//         top: 50%;
+//         left: 50%;
+//         transform: translate(-50%);
+//         transition: all .5s ease-in-out;
+
+//         &.moveUp{
+//             top: 20%;
+//         }
+//     }
+
+//     &--form-group{
+//         display: flex;
+//         align-items: center;
+//     }
+
+//     // .search-title{
+//     //     margin-bottom: 5rem;
+//     //     font-size: 4rem;
+//     //     font-family: $font-secondary;
+//     //     text-transform: uppercase;
+//     // }
+
+//     .search-bar{
+//         padding : 2.2rem 2.6rem;
+//         width: 50rem;
+//         border : none;
+//         outline: none;
+//         font-size: 1.9rem;
+//     }
+
+//     .search-icon{
+//         display: flex;
+//         border: 1px solid $color-white;
+//         padding: 2.025rem;
+//         cursor: pointer;
+//     }
+// }
+
 .search-container{
+
+    background-color: #000;
     min-height: 100vh;
-    background: linear-gradient(
-                    rgba(0, 0, 0, 0.96), /* Black with 50% opacity */
-                    rgba(0, 0, 0, 0.96)  /* You can adjust the opacity as needed */
-                ),
-                url('../../../assets/images/bg-search.jpg'); /* Path to your image */
-    background-size: cover;
-    background-position: 100% 30%;
-    color: #fff;
-    position: relative;
+    
+    &--searchbar{
+        padding: 2rem;
+    }
 
     &--search-group{
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%);
-        transition: all .5s ease-in-out;
-
-        &.moveUp{
-            top: 20%;
-        }
-    }
-
-    &--form-group{
+        background-color: $color-white;
         display: flex;
         align-items: center;
+        border-radius: 5rem;
+        padding: 1rem 1rem;
+        width: 60rem;
     }
 
-    // .search-title{
-    //     margin-bottom: 5rem;
-    //     font-size: 4rem;
-    //     font-family: $font-secondary;
-    //     text-transform: uppercase;
-    // }
+    &--search-icon{
+        font-size: 2rem;
+    }
 
-    .search-bar{
-        padding : 2.2rem 2.6rem;
-        width: 50rem;
-        border : none;
+    &--searchbar-input{
         outline: none;
-        font-size: 1.9rem;
+        border: none;
+        padding-left:1rem;
+        padding-right: 2rem;
+        flex: 1;
+        font-size: 1.8rem;
     }
 
-    .search-icon{
-        display: flex;
-        border: 1px solid $color-white;
-        padding: 2.025rem;
+    &--dummy-container{
+        padding: 2rem;
+        color: $color-white;
+    }
+
+    &--title-secondary{
+        font-size: 3.5rem;
+    }
+
+    &--cards{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 10px;
+
+        @media (min-width: 768px) {
+              grid-template-columns: repeat(5, 1fr); /* 5 items in a row */
+          }
+          
+          /* Media query for small screens */
+          @media (max-width: 767px) {
+              grid-template-columns: repeat(2, 1fr); /* 2 items in a row */
+          }
+    }
+
+    &--card{
+        background: red;
+        height: 35rem;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        padding: 2rem;
         cursor: pointer;
+        transition: all .5s $ease-in-out;
+        
+        .title{
+            font-size: 3rem;
+            font-weight: 700;
+        }
+
+        .thumbnail{
+            position: absolute;
+            bottom: -8%;
+            right: -10%;
+            width: 60%;
+            height: 60%;
+            object-fit: cover;
+            transform: rotate(30deg);
+            transition: all .5s $ease-in-out;
+        }
+
+        &:hover{
+            filter: brightness(80%);
+
+            .thumbnail{
+                transform: rotate(-30deg);
+            }
+        }
     }
 }
