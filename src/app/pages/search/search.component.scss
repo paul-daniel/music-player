@@ -56,7 +56,7 @@
 
 .search-container{
 
-    background-color: #000;
+    background-color: #141414;
     min-height: 100vh;
     
     &--searchbar{
@@ -97,7 +97,7 @@
     &--cards{
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        grid-gap: 10px;
+        grid-gap: 2rem;
 
         @media (min-width: 768px) {
               grid-template-columns: repeat(5, 1fr); /* 5 items in a row */
@@ -110,8 +110,7 @@
     }
 
     &--card{
-        background: red;
-        height: 35rem;
+        height: 33rem;
         position: relative;
         overflow: hidden;
         border-radius: 15px;
@@ -137,9 +136,75 @@
 
         &:hover{
             filter: brightness(80%);
+        }
+    }
 
-            .thumbnail{
-                transform: rotate(-30deg);
+    &--results{
+        color: $color-white;
+        padding: 2rem;
+    }
+
+    &--tray{
+        display: flex;
+        flex-direction: column;
+
+        .cat-title{
+            margin: 3rem 0;
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+    }
+
+    &--inner-tray{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-gap: 2rem;
+
+        @media (min-width: 768px) {
+            grid-template-columns: repeat(5, 1fr); /* 5 items in a row */
+        }
+        
+        /* Media query for small screens */
+        @media (max-width: 767px) {
+            grid-template-columns: repeat(2, 1fr); /* 2 items in a row */
+        }
+
+        .card{
+
+            img{
+               width: 250px;
+               height: 250px;
+               object-fit: cover;
+               border-radius: 10px;
+               margin-bottom: 1rem;
+               margin-top: 2rem;
+            }
+
+            p{
+                align-self: flex-start;
+                margin: 2rem;
+                font-size: 1.8rem;
+                font-weight: 600;
+            }
+
+            min-height: 35rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            border-radius: 15px;
+            background-color: rgba($color-grey, .2);
+            padding: 1rem;
+            cursor: pointer;
+
+            p.text-secondary{
+                font-size: 1.5rem;
+                color: rgba($color-white, .5);
+                margin: 0 2rem;
+            }
+            
+            &:hover{
+                background-color: rgba($color-grey, .5);
             }
         }
     }

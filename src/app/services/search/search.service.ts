@@ -35,7 +35,7 @@ export class SearchService {
   }
 
   getBrowseAllData() : Observable<any>{
-    const token = 'Bearer BQBPOMfS_Fdr2NOEW7FmOp-QBB9WZkDDJTRsNZUOlB-7o_duWYo_ISNWhqHGv67UVZMqBNO9OFp9GYVv0ibaPwd3_S8SD8QoHh5vnqDFMCw14_n3Pfg'
+    const token = 'Bearer BQCap_A2CgQuNFYTcuEu1Bl3zUKr4bFXVbGZ2XxQQM0FDjrWr1QHBrg6z9TEGTr1bO1-7LQISEd0zBhT2Y-b79jLSssB2FodtJbSaWnG2NHAkiGbGt4'
     const headers = new HttpHeaders({
       'Authorization': token
     })

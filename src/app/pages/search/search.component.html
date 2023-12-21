@@ -1,22 +1,5 @@
 <div class="search-container">
-    <!-- <div class="search-container--form-group">
-           <input [formControl]="searchInputControl" class="search-bar" type="text" placeholder="search..." (focus)="moveUpEffect()" (blur)="resetEffect()"/>
-           <span class="material-symbols-outlined search-icon" (click)="search()">
-            search
-           </span>
-    </div>
-    <div class="search-container--search--results">
-        <div *ngFor="let album of albums" class="card">
-            <img [src]="album.coverArt.sources[2].url" alt="{{ album.name }}">
-            <div class="card-body">
-              <h5 class="card-title">{{ album.name }}</h5>
-              <p class="card-text">Artist: {{ album.artists.items[0].profile.name }}</p>
-              <p class="card-text">Year: {{ album.date.year }}</p>
-              <a href="{{ album.uri }}" class="btn btn-primary">Go to Album</a>
-            </div>
-          </div>
-    </div> -->
-    <form class="search-container--searchbar">
+    <form class="search-container--searchbar" type (ngSubmit)="search($event)">
       <div class="search-container--search-group">
         <span class="material-symbols-outlined search-container--search-icon">
           search
@@ -25,14 +8,57 @@
       </div>
     </form>
 
-    <div class="search-container--dummy-container" *ngIf="categories">
+    <div class="search-container--dummy-container" *ngIf="categories && !this.sortedData.all.length">
       <h2 class="search-container--title-secondary">
         Browse All
       </h2>
       <div class="search-container--cards">
-        <div class="search-container--card" [ngStyle]="{'background-color': category.backgroundColor.hex}"  *ngFor="let category of categories">
+        <div class="search-container--card" [ngStyle]="{'background-color': category.backgroundColor.hex}"  *ngFor="let category of categories" (click)="onSearchEnter(category.title.transformedLabel)">
           <h3 class="title">{{category.title.transformedLabel}}</h3>
           <img class="thumbnail" [src]="category.artwork.sources[0].url">
+        </div>
+      </div>
+    </div>
+
+    <div class="search-container--results">
+      <div *ngIf="sortedData.artists.length" class="search-container--tray artists">
+        <p class="cat-title">Artist</p>
+        <div class="search-container--inner-tray">
+          <div class="artist-card card" *ngFor="let artist of sortedData.artists">
+            <ng-container *ngIf="artist.visuals.avatarImage !== null">
+              <img [src]="artist.visuals.avatarImage.sources[2].url" [alt]="artist?.profile.name" />
+              <p class="text-main">{{artist.profile.name}}</p>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="sortedData.albums.length" class="search-container--tray albums">
+        <p class="cat-title">albums</p>
+        <div class="search-container--inner-tray">
+          <div class="album-card card" *ngFor="let album of sortedData.albums">
+            <img [src]="album.coverArt.sources[2].url" [alt]="album.name">
+            <p class="card-title text-main">{{ album.name }}</p>
+            <p class="card-text text-secondary">{{ album.artists.items[0].profile.name }}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="sortedData.playlists.length" class="search-container--tray playlists">
+        <p class="cat-title">Playlist</p>
+        <div class="search-container--inner-tray">
+          <div class="playlist-card card" *ngFor="let playlist of sortedData.playlists">
+            <img [src]="playlist.images.items[0].sources[0].url" [alt]="playlist.name">
+            <p class="card-title text-main">{{ playlist.name }}</p>
+            <p class="text-secondary">{{playlist.owner.name}}</p>
+          </div>
+        </div>
+      </div>
+      <div *ngIf="sortedData.podcasts.length" class="search-container--tray podcasts">
+        <p class="cat-title">Podcast</p>
+        <div class="search-container--inner-tray">
+          <div class="podcast-card card" *ngFor="let podcast of sortedData.podcasts">
+            <img [src]="podcast.coverArt.sources[2].url" [alt]="podcast.name">
+            <p class="card-title text-main">{{ podcast.name }}</p>
+          </div>
         </div>
       </div>
     </div>
