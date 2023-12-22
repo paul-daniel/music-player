@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Albums, AlbumsItem, SearchType } from 'src/app/model/SearchResult';
 import { BrowseCategory } from 'src/app/model/browseAll';
 import { SearchService } from 'src/app/services/search/search.service';
@@ -55,8 +56,7 @@ export class SearchComponent implements OnInit {
     artists: []
   };
 
-  constructor(private searchService : SearchService){
-  }
+  constructor(private searchService : SearchService, private router: Router){}
 
   ngOnInit(): void {
       this.searchService.getBrowseAllData().subscribe(categories => {
@@ -67,7 +67,7 @@ export class SearchComponent implements OnInit {
       })
   }
 
-  search(event : Event){
+  search(event : Event) : void{
     event.preventDefault();
     const searchQuery = this.searchInputControl.value;
     if(searchQuery && searchQuery.length >= 3){
@@ -117,7 +117,7 @@ export class SearchComponent implements OnInit {
     }
   }
 
-  onSearchEnter(query ?: string){
+  onSearchEnter(query ?: string) : void{
     const searchQuery = query ? query : this.searchInputControl.value;
     if(searchQuery && searchQuery.length >= 3){
       this.searchService.search(SearchType.Albums ,searchQuery).subscribe({
@@ -130,5 +130,18 @@ export class SearchComponent implements OnInit {
         }
       })
     }
+  }
+
+  onCardClick(album : any) : void{
+    const albumId = album.uri.split(':')[2];
+    this.router.navigate(['/'], {
+      queryParams : {
+        album: album.name
+      },
+      state: {
+        id : albumId,
+        album : album
+      }
+    })
   }
 }

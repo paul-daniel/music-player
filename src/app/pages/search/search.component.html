@@ -35,7 +35,7 @@
       <div *ngIf="sortedData.albums.length" class="search-container--tray albums">
         <p class="cat-title">albums</p>
         <div class="search-container--inner-tray">
-          <div class="album-card card" *ngFor="let album of sortedData.albums">
+          <div class="album-card card" *ngFor="let album of sortedData.albums" (click)="onCardClick(album)">
             <img [src]="album.coverArt.sources[2].url" [alt]="album.name">
             <p class="card-title text-main">{{ album.name }}</p>
             <p class="card-text text-secondary">{{ album.artists.items[0].profile.name }}</p>
